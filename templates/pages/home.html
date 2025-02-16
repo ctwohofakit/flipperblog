@@ -1,0 +1,46 @@
+{%extends "base.html"%}
+
+{%block title%}Home{%endblock title%}
+
+
+{%block content%}
+    <section class="hero">
+        <div class="overlay">
+            <h1 class="anim-typewriter">Hello, Ethical Hackers...</h1>
+            <p>FIND MANY FLIPPER ZERO PROJECTS....</p>
+        </div>
+    </section>
+
+    <div class="main-content">
+
+        <h2>✥ Recent Projects ✥</h2>          
+        <div class="card-deck">
+            <div class="card text-white bg-dark mb-3">
+            <img class="card-img-top" src="/static/images/rfid.png" alt="Card image cap">
+            <div class="card-body text-white bg-dark mb-3">
+            <h5 class="card-title text-center">✥ RFID/NFC Exploration ✥</h5>
+            <p class="card-txt text-white bg-dark mb-3">It can read, emulate, and sometimes clone RFID or NFC tags, which is useful for understanding access control systems and security research (always on devices you have permission to test).</p>
+            </div>
+        </div>
+
+        <div class="card text-white bg-dark mb-3">
+            <img class="card-img-sec" src="/static/images/if.png" alt="Card image cap">
+            <div class="card-body text-white bg-dark mb-3">
+            <h5 class="card-title text-center">✥ Infrared (IR) Control ✥</h5>
+            <p class="card-txt text-white bg-dark mb-3">Flipper Zero can capture and replay IR signals from remote controls (e.g., TVs, air conditioners) to help understand how these devices communicate.</p>
+            </div>
+        </div>
+        <div class="card text-white bg-dark mb-3">
+            <img class="card-img-th" src="/static/images/pentest.png" alt="Card image cap">
+            <div class="card-body text-white bg-dark mb-3">
+            <br>
+            <h5 class="card-title text-center">✥ Penetration Testing ✥</h5>
+            <p class="card-txt text-white bg-dark mb-3">The device provides a portable platform to test vulnerabilities in systems you own or have explicit permission to test, helping to improve overall security.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+    </section>
+{%endblock content%}
