@@ -5,9 +5,8 @@
 {%block content%}
 
     <div class="d-flex flex-column justify-content-center align-items-center">
-        <div class="admin">
-            <h1 class="text-center">Log In</h1>
-            <form class="login-form" method="POST">
+            <form method="POST">
+                <h1 class="text-center">Log In</h1>
                 {%csrf_token%}
                 {{form.as_p}}
                 <div class="text-center">
@@ -15,7 +14,6 @@
                 </div>
 
             </form>
-        </div>
     </div>
 
 

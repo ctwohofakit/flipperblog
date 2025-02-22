@@ -1,0 +1,22 @@
+{%extends "base.html"%}
+{%load crispy_forms_tags %}
+
+{%block title%}{{ post.title}}{%endblock title%}
+
+{%block content%}
+<div class="edit-set">
+    <a href="{% url 'edit' post.pk %}"><button class="btn btn-secondary">Edit</button></a>
+    <a href="{% url 'delete' post.pk %}"><button class="btn btn-danger">Delete</button></a>
+</div>
+    {{form|crispy}}
+    <div class="post">
+    <h1>{{ post.title}}</h1>
+    <h3>{{post.subtitle}}</h3>
+    <small>{{post.created_on}}</small> 
+    <small>By:{{post.author}}</small> 
+    <p>{{post.body}}</p>
+
+</div>
+
+</div>
+{%endblock content%}
