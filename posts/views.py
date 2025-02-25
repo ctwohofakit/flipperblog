@@ -61,7 +61,6 @@ class PostCreateView(LoginRequiredMixin, CreateView): #superClass is stay on the
     fields = ["title", "subtitle", "body","status"]
     success_url = reverse_lazy('list') 
 
-
     def form_valid(self, form):
         form.instance.author=self.request.user
         return super().form_valid(form)
@@ -78,7 +77,6 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = "posts/edit.html" 
     model = Post
     fields = ["title", "subtitle","body", "status"]
-    success_url = reverse_lazy('list') 
 
     def test_func(self):
         post=self.get_object()
