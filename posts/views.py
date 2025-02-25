@@ -17,7 +17,7 @@ class PostListView(ListView):
         context["post_list"]=(
             Post.objects
             .filter(status=published)
-            .order_by("created_on".reverse())
+            .order_by("created_on").reverse()
         )
         return context
     
@@ -34,7 +34,7 @@ class DraftPostListView(ListView):
             Post.objects
             .filter(status=draft)
             .filter(author=self.request.user)
-            .order_by("created_on".reverse())
+            .order_by("created_on").reverse()
         )
         return context
 
@@ -49,7 +49,7 @@ class ArchivedPostListView(LoginRequiredMixin, ListView):
         context["post_list"]=(
             Post.objects
             .filter(status=archived)
-            .order_by("created_on".reverse())
+            .order_by("created_on").reverse()
         )    
         return context
 
@@ -63,6 +63,7 @@ class PostCreateView(LoginRequiredMixin, CreateView): #superClass is stay on the
 
     def form_valid(self, form):
         form.instance.author=self.request.user
+        # form.instance.status=Status.objects.get(name="pusblished")
         return super().form_valid(form)
 
 
