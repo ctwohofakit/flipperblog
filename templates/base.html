@@ -23,16 +23,30 @@
 
         </div>
         <div class="nav-right">
+          <div class="dropdown show">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Account
+            </a>
           {%if user.is_authenticated %}
             <form method="POST" action="{%url 'logout'%}">
               {%csrf_token%}
               <label class=".d-inline-block btn btn-primary btn-sm">Welcome, {{user.username}}</label>
               <input type="submit" class=".d-inline-block btn btn-dark btn-sm" value="Log Out">
             </form>
-            <a class="topnav" href="{% url 'new'%}">Create New</a>
-            <a class="topnav" href="{% url 'draft'%}">My Drafts</a>
-            <a class="topnav" href="{% url 'archive'%}">Archive</a>
-            <a class="topnav" href="{% url 'password_change'%}">Change Password </a>
+            <a class="dropdown-item"  href="{% url 'password_change'%}">Change Password </a>
+          </div>
+            <div class="dropdown show">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Edit Posts
+              </a>
+            
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item"  href="{% url 'new'%}">Create New</a>
+                <a class="dropdown-item"  href="{% url 'draft'%}">My Drafts</a>
+                <a class="dropdown-item" href="{% url 'archive'%}">Archive</a>
+              </div>
+            </div>
+
           {%else%}
             <a class="topnav" href="{% url 'signup' %}">Sign up</a>
             <a class="topnav"href="{% url 'login' %}">Log In</a>
