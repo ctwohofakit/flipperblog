@@ -17,7 +17,7 @@ class PostListView(ListView):
         context["post_list"]=(
             Post.objects
             .filter(status=published)
-            .order_by("created_on".reverse())
+            .order_by("-created_on")
         )
         return context
     
@@ -34,7 +34,7 @@ class DraftPostListView(ListView):
             Post.objects
             .filter(status=draft)
             .filter(author=self.request.user)
-            .order_by("created_on".reverse())
+            .order_by("-created_on")
         )
         return context
 
@@ -49,7 +49,7 @@ class ArchivedPostListView(LoginRequiredMixin, ListView):
         context["post_list"]=(
             Post.objects
             .filter(status=archived)
-            .order_by("created_on".reverse())
+            .order_by("-created_on")
         )    
         return context
 
@@ -58,7 +58,7 @@ class ArchivedPostListView(LoginRequiredMixin, ListView):
 class PostCreateView(LoginRequiredMixin, CreateView): #superClass is stay on the right--CreateView
     template_name = "posts/new.html"  
     model = Post
-    fields = ["title", "subtitle", "body"]
+    fields = ["title", "subtitle", "body","status"]
     success_url = reverse_lazy('list') 
 
 

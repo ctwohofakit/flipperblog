@@ -9,4 +9,7 @@ urlpatterns=[
     path("<int:pk>/",views.PostDetailView.as_view(), name="detail"),
     path("<int:pk>/edit/",views.PostUpdateView.as_view(), name="edit"),
     path("<int:pk>/delete/",views.PostDeleteView.as_view(), name="delete"),
+
+    path("draft/", views.DraftPostListView.as_view(), name="draft"),
+    path("archive/", views.ArchivedPostListView.as_view(), name="archive"),
 ]
