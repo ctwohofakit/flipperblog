@@ -17,7 +17,7 @@ class PostListView(ListView):
         context["post_list"]=(
             Post.objects
             .filter(status=published)
-            .order_by("-created_on")
+            .order_by("created_on".reverse())
         )
         return context
     
@@ -34,7 +34,7 @@ class DraftPostListView(ListView):
             Post.objects
             .filter(status=draft)
             .filter(author=self.request.user)
-            .order_by("-created_on")
+            .order_by("created_on".reverse())
         )
         return context
 
@@ -49,7 +49,7 @@ class ArchivedPostListView(LoginRequiredMixin, ListView):
         context["post_list"]=(
             Post.objects
             .filter(status=archived)
-            .order_by("-created_on")
+            .order_by("created_on".reverse())
         )    
         return context
 
