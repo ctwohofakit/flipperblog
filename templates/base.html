@@ -18,10 +18,7 @@
           <a class="topnav" href="{% url 'home'%}">Home</a>
           <a class="topnav" href="{% url 'about'%}">About</a>
           <a class="topnav" href="{% url 'list'%}">Blog</a>
-          <a class="topnav" href="{% url 'new'%}">Create New</a>
-          <a class="topnav" href="{% url 'draft'%}">My Drafts</a>
-          <a class="topnav" href="{% url 'archive'%}">Archive</a>
-          <a class="topnav" href="{% url 'password_change'%}">Change Password </a>
+
 
 
         </div>
@@ -32,6 +29,10 @@
               <label class=".d-inline-block btn btn-primary btn-sm">Welcome, {{user.username}}</label>
               <input type="submit" class=".d-inline-block btn btn-dark btn-sm" value="Log Out">
             </form>
+            <a class="topnav" href="{% url 'new'%}">Create New</a>
+            <a class="topnav" href="{% url 'draft'%}">My Drafts</a>
+            <a class="topnav" href="{% url 'archive'%}">Archive</a>
+            <a class="topnav" href="{% url 'password_change'%}">Change Password </a>
           {%else%}
             <a class="topnav" href="{% url 'signup' %}">Sign up</a>
             <a class="topnav"href="{% url 'login' %}">Log In</a>
