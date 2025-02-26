@@ -28,9 +28,9 @@
             <a class="topnav" href="{% url 'draft'%}">Drafts</a>
             <a class="topnav" href="{% url 'archive'%}">Archive</a>
             <a class="topnav" href="{% url 'password_change'%}">Change Password </a>
-            <form method="POST" action="{%url 'logout'%}">
+            <form class="pt-2" method="POST" action="{%url 'logout'%}">
               {%csrf_token%}
-              <label class="btn btn-success btn-sm">Hi, {{user.username}}</label>
+              <label class="btn btn-primary btn-sm">Hello, {{user.username}}</label>
               <input type="submit"  class="btn btn-dark btn-sm" value="Log Out">
             </form>
           {%else%}
