@@ -24,20 +24,25 @@
         </div>
         <div class="nav-right">
           {%if user.is_authenticated %}
-            <form method="POST" action="{%url 'logout'%}">
-              {%csrf_token%}
-              <label class=".d-inline-block btn btn-primary btn-sm">Welcome, {{user.username}}</label>
-              <input type="submit" class=".d-inline-block btn btn-dark btn-sm" value="Log Out">
-            </form>
-            <a class="topnav" href="{% url 'new'%}">Create New</a>
-            <a class="topnav" href="{% url 'draft'%}">My Drafts</a>
+            <a class="topnav" href="{% url 'new'%}">Create</a>
+            <a class="topnav" href="{% url 'draft'%}">Drafts</a>
             <a class="topnav" href="{% url 'archive'%}">Archive</a>
             <a class="topnav" href="{% url 'password_change'%}">Change Password </a>
+            <form method="POST" action="{%url 'logout'%}">
+              {%csrf_token%}
+              <label class="btn btn-success btn-sm">Hi, {{user.username}}</label>
+              <input type="submit"  class="btn btn-dark btn-sm" value="Log Out">
+            </form>
           {%else%}
             <a class="topnav" href="{% url 'signup' %}">Sign up</a>
             <a class="topnav"href="{% url 'login' %}">Log In</a>
           {%endif%}
+
+          </div>
+          </div>
         </div>
+
+
       </div>
     </div>
         {%block content%}
