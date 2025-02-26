@@ -116,12 +116,12 @@ a:hover:after {
     text-align: center;
 }
 
-.main-content{
-    height: 1000px !important;
+.main{
     padding: 5px; 
+    height: 500px !important;
 }
 
-.main-content h2{
+.main-h2{
     margin-top: 15px;
     text-align: center;
 }
